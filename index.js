@@ -55,6 +55,8 @@ function validateTimeFormat(time) {
     return { error: 'Invalid time format' };
   }
   const [hour, minute] = time.split(":").map(Number);
+
+  // Ensure hour and minute are within valid ranges and are non-negative
   if (hour < 0 || hour > 12 || minute < 0 || minute >= 60) {
     return { error: 'Invalid time value' };
   }
